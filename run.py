@@ -55,6 +55,8 @@ if __name__ == '__main__':
         print colored.red("REQUIRED")
         print colored.red("Please install those packages before Data Workshop: " + ", ".join(missing_packages))
         print colored.blue("pip install {0}".format( " ".join(missing_packages) ))
+        if 'xgboost' in missing_packages:
+            print colored.red("More info how to install xgboost: ") + colored.blue("http://xgboost.readthedocs.org/en/latest/build.html")
 
 
     if upgrade_packages:
