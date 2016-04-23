@@ -20,13 +20,13 @@ def verify_packages(packages):
     for package_name, package_version in packages.items():
         current_version = get_version_package(package_name)
         if False == current_version:
-            print colored.red("{0} - missing".format(package_name))
+            print(colored.red("{0} - missing".format(package_name)))
             missing_packages.append(package_name)
         else:
             if version_is_good(current_version, package_version):
-                print colored.green("{0}-{1} - OK".format(package_name, current_version))
+                print(colored.green("{0}-{1} - OK".format(package_name, current_version)))
             else:
-                print colored.yellow("{0}-{1} should be upgraded to {0}-{2}".format(package_name, current_version, package_version))
+                print(colored.yellow("{0}-{1} should be upgraded to {0}-{2}".format(package_name, current_version, package_version)))
                 upgrade_packages.append(package_name)
 
     return missing_packages, upgrade_packages
@@ -45,22 +45,22 @@ if __name__ == '__main__':
 
 
     if not missing_packages and not upgrade_packages:
-        print
-        print colored.green("=" * 50)
-        print colored.green("All right, you are ready to go on Data Workshop!")
+        print("")
+        print(colored.green("=" * 50))
+        print(colored.green("All right, you are ready to go on Data Workshop!"))
 
     if missing_packages:
-        print
-        print colored.red("=" * 50)
-        print colored.red("REQUIRED")
-        print colored.red("Please install those packages before Data Workshop: " + ", ".join(missing_packages))
-        print colored.blue("pip install {0}".format( " ".join(missing_packages) ))
+        print("")
+        print(colored.red("=" * 50))
+        print(colored.red("REQUIRED"))
+        print(colored.red("Please install those packages before Data Workshop: " + ", ".join(missing_packages)))
+        print(colored.blue("pip install {0}".format( " ".join(missing_packages) )))
         if 'xgboost' in missing_packages:
-            print colored.red("More info how to install xgboost: ") + colored.blue("http://xgboost.readthedocs.org/en/latest/build.html")
+            print(colored.red("More info how to install xgboost: ") + colored.blue("http://xgboost.readthedocs.org/en/latest/build.html"))
 
 
     if upgrade_packages:
-        print
-        print colored.yellow("=" * 50)
-        print colored.yellow("RECOMENDATION (without upgrade some needed features could be missing)")
-        print colored.blue("pip install --upgrade {0}".format( " ".join(upgrade_packages) ))
+        print("")
+        print(colored.yellow("=" * 50))
+        print(colored.yellow("RECOMENDATION (without upgrade some needed features could be missing)"))
+        print(colored.blue("pip install --upgrade {0}".format( " ".join(upgrade_packages) )))
