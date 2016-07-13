@@ -10,7 +10,8 @@ packages = {
     "matplotlib": "1.5",
     "seaborn": "0.7",
     "sklearn": "0.17",
-    "xgboost": "0.4"
+    "xgboost": "0.4",
+    "ggplot": "0.10"
 }
 
 def verify_packages(packages):
