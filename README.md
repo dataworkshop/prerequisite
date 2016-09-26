@@ -5,6 +5,9 @@ Prerequisites for [Data Workshop](http://dataworkshop.eu/)
 * `git clone https://github.com/dataworkshop/prerequisite`
 * `python prerequisite/run.py`
 
+## Extra visual packages
+* `python prerequisite/run.py -ev` or `python prerequisite/run.py --extra_visual`
+
 ## Reports
 ### Everything is OK :)
 ![OK](https://raw.githubusercontent.com/dataworkshop/prerequisite/master/images/prereq_ok.png)
