@@ -2,6 +2,9 @@ from clint.textui import colored
 
 from distutils.version import StrictVersion
 import importlib
+import argparse
+import distutils.util
+
 
 packages = {
     "IPython": "4.0",
@@ -64,6 +67,13 @@ def version_is_good(actual_version, expected_version):
     return StrictVersion(actual_version) >= StrictVersion(expected_version)
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Prerequisite')
+    parser.add_argument('--extra_visual', '-ev', action='store_true')
+    args = parser.parse_args()
+
+    if args.extra_visual:
+        packages.update(additional_visual_packages)
+
     missing_packages, upgrade_packages = verify_packages(packages)
 
     if not missing_packages and not upgrade_packages:
