@@ -10,13 +10,14 @@ packages = {
     "IPython": "4.0",
     "ipywidgets": "4.1.1",
     "pandas": "0.18",
-    "numpy": "1.10",
-    "matplotlib": "1.5",
+    "numpy": "1.12",
+    "matplotlib": "2.0",
     "seaborn": "0.7",
-    "sklearn": "0.17",
+    "sklearn": "0.18",
     "xgboost": "0.4",
     "ggplot": "0.10",
     "ml_metrics": "0.1.4",
+	"keras": "1.1.1",
 }
 
 additional_visual_packages = {
