@@ -18,6 +18,8 @@ packages = {
     "ggplot": "0.10",
     "ml_metrics": "0.1.4",
 	"keras": "1.1.1",
+	"hyperopt": "0.1",
+	"hyperas": "0.3"
 }
 
 additional_visual_packages = {
