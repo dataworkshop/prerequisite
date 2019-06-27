@@ -82,13 +82,13 @@ if __name__ == '__main__':
     if not missing_packages and not upgrade_packages:
         print("")
         print(colored.green("=" * 50))
-        print(colored.green("All right, you are ready to go on Data Workshop!"))
+        print(colored.green("All right, you are ready to go on DataWorkshop!"))
 
     if missing_packages:
         print("")
         print(colored.red("=" * 50))
         print(colored.red("REQUIRED"))
-        print(colored.red("Please install those packages before Data Workshop: " + ", ".join(missing_packages)))
+        print(colored.red("Please install those packages before DataWorkshop: " + ", ".join(missing_packages)))
         print(colored.blue("pip install {0}".format( " ".join(missing_packages) )))
         if 'xgboost' in missing_packages:
             print(colored.red("More info how to install xgboost: ") + colored.blue("http://xgboost.readthedocs.org/en/latest/build.html"))
