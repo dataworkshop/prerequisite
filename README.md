@@ -1,5 +1,5 @@
 # Prerequisites
-Prerequisites for [Data Workshop](http://dataworkshop.eu/)
+Prerequisites for [DataWorkshop](http://dataworkshop.eu/)
 
 ## Run
 * `git clone https://github.com/dataworkshop/prerequisite`
