@@ -3,24 +3,40 @@ from clint.textui import colored
 from distutils.version import StrictVersion
 import importlib
 import argparse
-import distutils.util
-
 
 packages = {
     "IPython": "4.0",
     "ipywidgets": "4.1.1",
     "pandas": "0.18",
-    "numpy": "1.12",
+    "numpy": "1.15",
     "matplotlib": "2.0",
     "seaborn": "0.7",
     "sklearn": "0.18",
-    "xgboost": "0.4",
-    "ggplot": "0.10",
+    "xgboost": "0.7",
     "ml_metrics": "0.1.4",
-	"keras": "1.1.1",
 	"hyperopt": "0.1",
-	"hyperas": "0.3"
+    "hyperas": "0.4",
+    "tensorflow": "1.12",
+    "gensim": "3.4",
+    "sqlalchemy": "1.2",
+    "tqdm": "4.28",
+    "xgbfir": "0.3",
+    "graphviz": "0.8",
+    "livelossplot": "0.3",
+    "rfpimp": "1.3",
+    "eli5": "0.8",
+    "skimage": "0.13",
+    "scikitplot": "0.3",
+    "deepreplay": "0.1.1a2",
+    "albumentations": "0.2",
+    "clint": "0.5",
+    "pandas_profiling": "1.4",
+    "mpld3": "0.3",
+    "modin": "0.6",
+    "qgrid": "1.1",
+    "imblearn": "0.5",
 }
+
 
 additional_visual_packages = {
     "gmplot": "1.1.1",
@@ -54,7 +70,7 @@ def verify_packages(packages):
 
 def handle_package_without_version(current_version, package_version, package_name):
     if current_version != package_version:
-        print(colored.yellow("{0} exists, but has no attribute version. Expected versin {1}".format(package_name, package_version)))
+        print(colored.yellow("{0} exists, but has no attribute version. Expected version {1}".format(package_name, package_version)))
     else:
         print(colored.green("{0} - OK".format(package_name)))
 
@@ -97,5 +113,5 @@ if __name__ == '__main__':
     if upgrade_packages:
         print("")
         print(colored.yellow("=" * 50))
-        print(colored.yellow("RECOMENDATION (without upgrade some needed features could be missing)"))
+        print(colored.yellow("RECOMMENDATION (without upgrade some needed features could be missing)"))
         print(colored.blue("pip install --upgrade {0}".format( " ".join(upgrade_packages) )))
